@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | [Blogr]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    html{
+      overflow-x: clip;
+    }
+  
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+       /* outline-offset: 1px;
+      outline: 2px solid red;  */
+    }
+
+    body {
+      font-family: "Overpass", sans-serif;
+      font-weight: 600;
+    }
+
+    /* start css flex-row or text */
+    .flex_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 14px;
+    }
+
+    .background_orange {
+      width: 96rem;
+      height: 36rem;
+      background-color: hsl(13, 100%, 72%);
+      background-image: linear-gradient(180deg,hsl(13, 100%, 72%)0%, hsl(353, 100%, 62%)100%);
+      border-radius: 0px 0px 0px 81px;
+      background-image: url(images/bg-pattern-intro-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: -31rem;
+    }
+
+    .link ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .link li {
+      margin: 1.7rem;
+      color: whitesmoke;
+    }
+
+    .link li:hover {
+      text-decoration: underline;
+    }
+
+    .link li::after {
+      content: "";
+      background-image: url(images/icon-arrow-light.svg);
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      position: relative;
+      left: 82px;
+      top: -9px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .sign button {
+      width: 131px;
+      height: 40px;
+      background-color: white;
+      color: hsl(356, 100%, 66%);
+      border-radius: 20px;
+      border: none;
+      margin: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .sign button:nth-child(1) {
+      background: none;
+      color: white;
+    }
+
+    .sign button:nth-child(2):hover {
+      background: none;
+      color: white;
+      border: 1px solid white;
+      transition: 0.5s;
+    }
+
+    .flex-1 {
+      margin-top: 10rem;
+    }
+
+    .text {
+      text-align: center;
+    }
+
+    .text h1 {
+      color: white;
+      font-size: 4rem;
+      font-weight: 100;
+    }
+
+    .text p {
+      font-size: 20px;
+      padding: 10px;
+      color: #ffffffa6;
+    }
+
+    .text button {
+      width: 130px;
+      height: 40px;
+      background-color: white;
+      color: hsl(356, 100%, 66%);
+      border-radius: 20px;
+      border: none;
+      margin: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btns {
+      margin-top: 20px;
+    }
+
+    .btns button:nth-child(2):hover {
+      background-color: white;
+      color: orangered;
+      transition: 0.4s;
+    }
+
+    .btns button:nth-child(1):hover {
+      background: none;
+      color: white;
+      border: 1px solid white;
+      transition: 0.5s;
+    }
+
+    .btns button:nth-child(2) {
+      background: none;
+      color: white;
+      border: solid 1px white;
+    }
+
+    /* css  end flex-row or text */
+    /* css star is tag section 1 */
+    .text-1 h1 {
+      text-align: center;
+      margin-top: 10rem;
+      color: hsl(208, 49%, 24%);
+      font-size: 3rem;
+    }
+
+    .flex-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem;
+    }
+
+    .text-2 h2 {
+      color: hsl(208, 49%, 24%);
+    }
+
+    .text-2 p {
+      line-height: 30px;
+      margin-top: 20px;
+      color: #7e8083;
+      width: 34rem;
+    }
+
+    .editor-desktop img {
+      position: relative;
+      left: 15rem;
+    }
+
+    /* css end push is tag section 1 */
+    /* css section number 2 start*/
+    .backgrond_blue {
+      height: 25rem;
+      background-color: hsl(208, 49%, 24%);
+      background-image: url(images/bg-pattern-circles.svg);
+      background-repeat: no-repeat;
+      border-radius: 0px 89px 0px 89px;
+    }
+
+    .bg_mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .bg_mobile img {
+      position: relative;
+      top: -4rem;
+    }
+
+    .text-3 {
+      color: white;
+      margin-top: -10rem;
+    }
+
+    .text-3 h2 {
+      font-size: 2rem;
+    }
+
+    .text-3 p {
+      width: 32rem;
+      line-height: 30px;
+      margin-top: 20px;
+    }
+
+    /* css number 2 end */
+
+    /* start number 3*/
+    .flex-3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 10rem;
+    }
+
+    .flex-3 img {
+      position: relative;
+      right: 22rem;
+    }
+
+    .text-4 {
+      margin-left: -19rem;
+    }
+
+    .text-4 h2 {
+      color: hsl(208, 49%, 24%);
+    }
+
+    .text-4 p {
+      width: 34rem;
+      line-height: 30px;
+      margin-top: 20px;
+      color: #7e8083;
+    }
+
+    /* section 3 end */
+
+    /* footer */
+    .background_black {
+      height: 20rem;
+      background-color: #24242c;
+      color: white;
+      padding: 5em;
+      border-radius: 0px 90px 0px 0px;
+      margin-top: 10rem;
+    }
+
+    .flex-5 {
+      display: flex;
+      align-items: start;
+      justify-content: space-evenly;
+    }
+
+    .link_row ul {
+      margin: 0.5rem;
+    }
+
+    .link_row li {
+      list-style: none;
+      margin: 0.5rem;
+      color: #626368;
+      cursor: pointer;
+    }
+
+    .link_row li:hover {
+      transition: 0.5s;
+      color: wheat;
+      text-decoration: underline;
+    }
+
+    .link_row h3 {
+      padding: 10px;
+    }
+
+    /* icon display none img menu or close*/
+    .menu img {
+      margin: 0.5rem;
+      display: none;
+    }
+
+    /* mobile media size */
+    @media(max-device-width:45em) {
+      /* menu img open ,close icons start*/
+      .menu img{
+        display: block;
+      }
+      .menu img:nth-child(1){
+        margin-left: 14rem;
+      }
+      .menu img:nth-child(2){
+        display: none;
+        margin-left: 13rem;
+      }
+      .flex_row{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      }
+     .link ul{
+      width: 300px;
+      height: 400px;
+      background-color: white;
+      color: black;
+      position: absolute;
+      top: 8rem;
+      left: 3rem;
+      display: none;
+     }
+     .link li::after{
+      content: "";
+      background-image: url(images/icon-arrow-dark.svg);
+      position: absolute;
+      top: 35px;
+      left: 12rem;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+     }
+     .link ul li{
+      color: #24242c;
+      text-align: center;
+     }
+     .link ul{
+      flex-direction: column;
+     }
+     .sign{
+      display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25rem;
+    left: 7rem;
+    display: none;
+     }
+     .sign button:hover:nth-child(2){
+      background-color: black;
+      color: white;
+      transition: 0.5s;
+     }
+     .sign button:nth-child(1){
+        color: hsl(353, 100%, 62%)
+      }
+      .sign button:nth-child(2){
+        background-color: hsl(353, 100%, 62%);
+        color: black;
+      }
+     /* end open ,close  icons end*/
+      .background_orange {
+        width: 25rem;
+        height: 40rem;
+        border-radius: 0px 0px 0px 134px;
+      }
+     
+
+      .text {
+        text-align: center;
+        margin-left: 70px;
+      }
+
+      .text h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        width: 19rem;
+        margin-left: -1rem;
+      }
+
+      .text p {
+        width: 23rem;
+        margin-left: -50px;
+      }
+
+      .btns {
+        margin: 5px 0px 0px -4rem;
+      }
+
+      .text-1 h1 {
+        font-size: 2rem;
+      }
+
+      .flex-2 {
+        flex-direction: column-reverse;
+      }
+
+      .editor-desktop img {
+        width: 21rem;
+        left: 1rem;
+      }
+
+      .text-2 {
+        text-align: center;
+        margin-left: 2rem;
+      }
+
+      .text-2 h2 {
+        font-weight: 600;
+        width: 18rem;
+      }
+
+      .text-2 p {
+        width: 21rem;
+        margin-left: -2rem;
+      }
+
+      .backgrond_blue {
+        height: 40rem;
+        margin-top: 22rem;
+      }
+
+      .bg_mobile {
+        display: flex;
+        flex-direction: column;
+        margin-left: 19px;
+      }
+
+      .bg_mobile img {
+        width: 26rem;
+        position: relative;
+        top: -12rem
+      }
+
+      .text-3 {
+        text-align: center;
+      }
+
+      .text-3 h2 {
+        font-size: 3rem;
+        font-weight: 100;
+      }
+
+      .text-3 p {
+        width: 21rem;
+        margin-left: 2rem;
+      }
+
+      .flex-3 {
+        flex-direction: column;
+      }
+
+      .flex-3 img {
+        width: 32rem;
+        right: 1rem;
+      }
+      .text-4{
+        text-align: center;
+      }
+      .text-4 h2{
+        margin-left: 17rem;
+      }
+      .text-4 p{
+        width: 22rem;
+        margin-left: 18rem;
+      }
+      .background_black{
+        height: 60rem;
+      }
+      .flex-5{
+        flex-direction: column;
+        align-items: center;
+      }
+      .link_row h3{
+        padding: 21px;
+      }
+    }
+    /* mobile iphone 14*/
+    @media (max-device-width:430px){
+      .background_orange{
+        width: 27rem;
+      }
+      .btns{
+        margin-left: -7rem;
+      }
+      .backgrond_blue{
+        width: 27rem;
+      }
+      .text-3 p{
+        margin-left: 4rem;
+      }
+      .background_black{
+        width: 27em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!---- tag nav and logo flex  row>-->
+  <nav>
+    <div class="background_orange">
+      <div class="flex_row">
+        <div class="img_logo">
+          <img src="images/logo.svg" alt="logo">
+        </div>
+        <div class="link">
+          <ul>
+            <li>Product</li>
+            <li>Company</li>
+            <li>Connect</li>
+          </ul>
+        </div>
+        <div class="sign">
+          <button>Login</button>
+          <button>Sign Up</button>
+        </div>
+
+        <!-- Mobile menu or close icons-->
+        <div class="menu">
+          <img src="images/icon-hamburger.svg" alt="icon-hamburger" id="menu">
+          <img src="images/icon-close.svg" alt="icon-close" id="close">
+        </div>
+      </div>
+      <header>
+        <div class="flex-1">
+          <div class="text">
+            <h1> A modern publishing platform</h1>
+            <p>Grow your audience and build your online brand</p>
+            <div class="btns">
+              <button>Start for free</button>
+              <button>Learn More</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </nav>
+  <!-- this is text or image flex tag section number 1 -->
+  <section>
+    <div class="text-1">
+      <h1>Designed for the future</h1>
+      <div class="flex-2">
+        <div class="text-2">
+          <h2>Introducing an extensible editor</h2>
+          <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+            The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+            videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+            change the looks of a blog.</p>
+          <!-- idea text h2 margin top and  css tag nth child-->
+          <h2 style="margin-top:40px;">Robust content management</h2>
+          <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog
+            by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+          </p>
+        </div>
+        <div class="editor-desktop">
+          <img src="images/illustration-editor-desktop.svg" alt="editor-desktop">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- next section number 2 anmd  mobile img or text, flex-->
+  <div class="backgrond_blue">
+    <div class="bg_mobile">
+      <img src="images/illustration-phones.svg" alt="bg_mobile">
+      <div class="text-3">
+        <h2>State of the Art Infrastructure</h2>
+        <p> With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
+          This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- next section number 3 and laptop img and flex text -->
+  <section>
+    <div class="flex-3">
+    <picture>
+  <img src="images/illustration-laptop-desktop.svg" alt="Illustration of laptop and desktop">
+</picture>
+
+      <div class="text-4">
+        <h2>Free, open, simple</h2>
+        <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports
+          features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+          and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+        <h2 style="margin-top: 5rem;">Powerful tooling</h2>
+        <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a
+          breeze, but
+          capable of producing even the most complicated sites.</p>
+      </div>
+    </div>
+  </section>
+  <!-- footer use-->
+  <footer>
+    <div class="background_black">
+      <div class="flex-5">
+        <div class="logo_blogr">
+          <img src="images/logo.svg" alt="logo_blogr">
+        </div>
+        <div class="link_row">
+          <h3>Product</h3>
+          <ul>
+            <li>Overview</li>
+            <li>Pricing</li>
+            <li>Marketplace</li>
+            <li>Features</li>
+            <li>Integrations</li>
+          </ul>
+        </div>
+        <div class="link_row">
+          <h3>Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Team</li>
+            <li>blog</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+        <div class="link_row">
+          <h3>Connect</h3>
+          <ul>
+            <li>Contact</li>
+            <li>Newsletter</li>
+            <li>LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+  </footer>
+  <!-- gasp anmation smooth-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+
+  <!-- my name code by frontend -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Shivam Kumar</a>.
+  </div>
+</body>
+
+</html>
